@@ -8,9 +8,9 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
-    scanf("%d", &a);
-    scanf("%d", &b);
-    printf("%d\n%d\n", 2 * (a + b), a * b);
+    double a, b;
+    scanf("%lf", &a);
+    scanf("%lf", &b);
+    printf("%.2lf\n%.2lf\n", 2.0 * (a + b), a * b);
     return 0;
 }
