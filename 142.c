@@ -25,9 +25,6 @@ int main() {
             arr[i * j] = 1;
         }
     }
-    //for(int i = 10000; i < 100000; i++) {
-    //    printf("arr[%d] = %d ", i,arr[i]);
-    //}
     scanf("%d%d", &a, &b);
     int ret = 0;
     for(int i = a; i <= b; i++) {
