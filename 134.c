@@ -10,8 +10,14 @@
 int main() {
     int a, b;
     scanf("%d%d", &a, &b);
+    int ret = 0;
     for(int i = a; i <= b; i++) {
-        if(!(i % 11)) printf("%d\n", i);
+        if(ret) printf(" ");
+        ret++;
+        if(!(i % 11)) {
+            printf("%d", i);
+        }
     }
+    printf("\n");
     return 0;
 }
