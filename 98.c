@@ -13,6 +13,6 @@
 int main () {
     double r, h;
     scanf("%lf%lf", &r, &h);
-    printf("%.2lf\n", PI * r * r * h);
+    printf("%.2lf\n%.2lf\n", r * r * PI,r * r * PI * h);
     return 0;
 }
