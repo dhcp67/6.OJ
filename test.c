@@ -8,8 +8,14 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
-    scanf("%d%d", &a, &b);
-    printf("%d\n", a + b);
-    return 0;
+    double n;
+    scanf("%lf", &n);
+    double l = n;
+    for(int i = 0;i < 6; i++) {
+        l =  l * (1.00417);
+        if(i == 5) printf("$%.2lf\n", l);
+        l = n + l;
+
+    }
+
 }
