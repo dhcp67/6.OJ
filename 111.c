@@ -10,6 +10,6 @@
 int main() {
     int N;
     scanf("%d", &N);
-    printf("%g\n", 14.0 + (N - 3) * 2.3);
+    printf("%g\n", N > 3 ? 14.0 + (N - 3) * 2.3 : 14);
     return 0;
 }
