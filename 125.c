@@ -19,21 +19,28 @@ int main() {
     ht = ss / 3600;
     mt = ss % 3600 / 60;
     if(ht <= 11) {
-        percentage = 86400.0 / t;
+        percentage = t / 86400.0;
         strcpy(time, "am");
     } else {
-        if (ht > 12 && ht < 24) {
+        if (ht == 12) {
+            strcpy(time, "pm");
+            percentage = t / 86400.0;
+        } else if (ht > 12 && ht < 24) {
             percentage = t / 86400.0;
             ht -= 12;
             strcpy(time, "pm");
         }else {
-            percentage = t / 86400.0 * 2;
+            percentage = t / 86400.0;
+            if (ht == 24) percentage = t /  86400.0;
             ht -= 24;
-            if (ht == 0) {
+            if (ht >= 12) {
                 strcpy(time, "pm");
-                ht = 12;
-            }else{
+                if (ht != 12) ht -= 12;
+            } else {
                 strcpy(time, "am");
+                if (ht == 0) {
+                    ht = 12;
+                }
             }
         }
     }
