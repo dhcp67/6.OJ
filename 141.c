@@ -9,11 +9,32 @@
 
 int main() {
     int n;
-    char num[60] = {0};
     scanf("%d", &n);
-    int tmp = n + 1;
-    for (int i = 1; i <= tmp; i++) {
-        
+    int num = 2* n + 1;
+    int ret = 0;
+    int min = n + 1;
+    char word = 'A';
+    for (int i = 1; i <= 2 * n + 1; i++) {
+        for (int j = 0; j < ret; j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= num; j++) {
+            printf("%c", word);
+            if(j < min) word++;
+            else if(j != num) word--;
+        }
+        if(i <= n) {
+            num -= 2;
+            ret++;
+            word++;
+            min--;
+        } else {
+            num += 2;
+            ret--;
+            word--;
+            min++;
+        }
+        printf("\n");
     }
     return 0;
 }
