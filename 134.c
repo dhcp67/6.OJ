@@ -8,15 +8,19 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
+    int a, b, num[100] = {0};
     scanf("%d%d", &a, &b);
     int ret = 0;
     for(int i = a; i <= b; i++) {
-        if(ret) printf(" ");
-        ret++;
-        if(!(i % 11)) {
-            printf("%d", i);
+        if (i % 11 == 0) {
+            num[ret] = i;
+            ret++;
         }
+    }
+    int i = 0;
+    while(num[i++]) {
+        if(i != 1) printf(" ");
+        printf("%d", num[i - 1]);
     }
     printf("\n");
     return 0;
