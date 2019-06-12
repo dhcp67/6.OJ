@@ -10,9 +10,10 @@
 int main () {
     int m , n;
     double s = 0.0;
-    scanf("%d", &n);
-    while(--n) {
-        printf("%d\n", n);
+    scanf("%d%d", &m, &n);
+    while(n--) {
+        s = (m + s) * (1.00417);
     }
+    printf("%.2lf\n", s);
     return 0;
 }
