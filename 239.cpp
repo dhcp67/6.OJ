@@ -5,7 +5,7 @@
 	> Created Time: 2019年06月13日 星期四 20时54分10秒
  ************************************************************************/
 
-#include <stdio.h>
+#include <iostream>
 #include <cmath>
 
 using namespace std;
@@ -46,6 +46,6 @@ int main() {
     long long x1, y1, x2, y2;
     getXY(n, s, x1, y1);
     getXY(n, d, x2, y2);
-    cout << (int)
+
     return 0;
 }
