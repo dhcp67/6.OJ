@@ -1,51 +1,65 @@
 /*************************************************************************
-	> File Name: 239.c
-	> Author: lichun
-	> Mail: 318082789@qq.com
-	> Created Time: 2019年06月13日 星期四 20时54分10秒
+	> File Name: 239.cpp
+	> Author: 
+	> Mail: 
+	> Created Time: 2019年06月13日 星期四 21时36分28秒
  ************************************************************************/
 
-#include <iostream>
-#include <cmath>
-
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<cmath>
+#include<vector>
+#include<map>
 using namespace std;
+typedef long long lint;
 
-void getXY(long long n, long long s, long long &x, long long &y) {
+double S(double a){
+    return a * a;
+}
+
+void getXY(lint n, lint s, lint &x, lint &y) {
     if (n == 0) {
         x = 0, y = 0;
         return ;
     }
-    long long xx, yy;
-    long long len_n_1 = (long long)pow(2, n - 1);
-    long long total_n = len_n_1 * len_n_1;
-    long long ind1 = s / total_n, ind2 = s % total_n;
-    getXY(n - 1, ind2, xx, yy);
-    switch(ind1) {
-        case 0:{
+    lint xx,yy;
+    lint len_n_1 = (int)pow(2, n - 1);
+    lint total_n = len_n_1 * len_n_1;
+    lint ind1 = s / total_n,ind2 = s % total_n;
+    getXY(n - 1,ind2,xx,yy);
+    switch (ind1) {
+        case 0: {
             x = yy, y = xx;
         } break;
-        case 1:{
-            x = xx, y = yy + len_n_1;
+        case 1: {
+            x = xx,y = yy + len_n_1;
         } break;
         case 2: {
-            x = xx + len_n_1, y = yy + len_n_1;
+            x = xx + len_n_1,y = yy + len_n_1;
         } break;
         case 3: {
-            x = 2 * len_n_1 - yy - 1, y = yy + len_n_1; 
-        }
+            x = 2 * len_n_1 - yy - 1, y = len_n_1 - xx -1;
+        } break;
     }
-    if(ind1 == 0) {
-        x == yy, y = xx;
-    }
+    return ;
+}
 
+void solve(){
+    lint n,s,d;
+    cin >> n >> s >> d;
+    lint x1,y1,x2,y2;
+    getXY(n, s - 1, x1, y1);
+    getXY(n, d - 1, x2, y2);
+    printf("%.0lf\n",sqrt(S((x1 - x2) * 10) + S((y1 - y2) * 10)));
+    return ;
 }
 
 int main() {
-    long long n, s, d;
-    cin >> n >> s >> d;
-    long long x1, y1, x2, y2;
-    getXY(n, s, x1, y1);
-    getXY(n, d, x2, y2);
-
+    int t;
+    cin >> t;
+    while (t--) solve();
     return 0;
 }
