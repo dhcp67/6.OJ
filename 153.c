@@ -10,8 +10,8 @@
 int main() {
     int y, m, d;
     scanf("%d%d%d", &y, &m, &d);
-    if (m == 3) m == 13;
-    if (m == 4) m == 14;
+    if (m == 1) m == 13;
+    if (m == 2) m == 14;
     int j = y / 100 + 1;
     int k = y % 100;
     int h = (d + 26 * (m + 1) / 10 + k + k / 4 + j / 4 + 5 * j) % 7;
