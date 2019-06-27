@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#define MAX_N 10000
+#define MAX_N 20000
 
 char A[MAX_N + 5];
 char B[MAX_N + 5];
