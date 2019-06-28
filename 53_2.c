@@ -6,6 +6,7 @@
  ************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
 #define MAX_N 1000000
 int prime[MAX_N + 5];
 int dnum[MAX_N + 5];

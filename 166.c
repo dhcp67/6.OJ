@@ -22,7 +22,7 @@ int main() {
     int L = strlen(A);
     int L1 = strlen(B);
     if (L > 100) printf("100\n");
-    else printf("%d\n", L1);
+    else printf("%d\n", L);
     for (int i = 0; i < n - 1; i++) {
         C[i] = A[i];
     }
