@@ -6,15 +6,24 @@
  ************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
 #define MAX_N 1000
 char arr[MAX_N + 5];
-char cnt[MAX_N + 5];
+int cnt[MAX_N + 5];
 
 int main() {
-    int n;
+    int n, ans = 0;
+    char ret;
+    int tmp = 'A' - 0;
     scanf("%d", &n);
     while (n--) {
-        
+        scanf("%c", &ret);
+        getchar();
+        int swap = ret - tmp;
+        scanf("%d", &cnt[swap]);
     }
-    printf("%d\n", ans);
+    for (int i = 0; i < 30; i++) {
+        printf("%d\n", cnt[i]);
+    }
+    return 0;
 }
