@@ -7,10 +7,9 @@
 
 #include <stdlib.h>
 
-#define MAX(a, b) 
+#define MAX(a, b) a > b ? a : b 
 
 #define Plog(frm, arg...) 
-
 void haizei_test() {
     int a = 6;
     Plog("%d", MAX(2, 3));
