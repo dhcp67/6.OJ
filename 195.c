@@ -25,7 +25,7 @@ int main() {
         int ans = a[0];
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (q[i] > a[mid]) {
+            if (q[i] >= a[mid]) {
                 ans = a[mid];
                 left = mid + 1;
             } else {
