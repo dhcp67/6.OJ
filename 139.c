@@ -14,7 +14,7 @@ int main() {
     int cnt = n - 1;
     for(int i = 1; i <= 2 * n - 1; i++) {
         for(int tmp = 1; tmp <= cnt; tmp++) {
-            printf( " ");
+            printf(" ");
         }
         if(i < n) cnt--;
         else cnt++;
