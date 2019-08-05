@@ -18,7 +18,7 @@ int main() {
     double a;
     double ans;
     scanf("%lf", &a);
-    double l = 0.0, r = 10.0;
+    double l = 0.0, r = 20.0;
     for (int i = 0; i < 10000; i++) {
         double mid = (l + r) / 2;
         double tmp = f(mid, a);
