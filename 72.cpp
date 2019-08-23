@@ -6,21 +6,27 @@
  ************************************************************************/
 
 #include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <algorithm>
+#include <vector>
+#include <map>
+#include <cmath>
 using namespace std;
 #define MAX_N 10000
 
 struct UnionSet {
     int fa[MAX_N + 5], val[MAX_N + 5];
     void init(int n) {
-        for (int i = 0; i <= n; i++) fa[i] = i;
+        for (int i = 1; i <= n; i++) fa[i] = i; 
     }
-    int get (int x) {
+    int get(int x) {
         if (x == fa[x]) return x;
         int root = get(fa[x]);
         val[x] += val[fa[x]];
         val[x] %= 3;
         return fa[x] = root;
-
     }
     void merge(int a, int b, int c) {
         int aa = get(a), bb = get(b);
@@ -49,12 +55,12 @@ int main() {
             u.merge(b, c, 2);
         } else {
             if (u.get(b) != u.get(c)) {
-                cout << "Unknow" << endl;
+                cout << "Unknown" << endl;
             } else {
-                switch((u.val[b] - u.val[c] + 3) % 3) {
+                switch ((u.val[b] - u.val[c] + 3) % 3) {
                     case 0: cout << "Tie" << endl; break;
-                    case 1: cout << "Win" << endl; break;
-                    case 2: cout << "Loss" << endl; break;
+                    case 1: cout << "Loss" << endl; break;
+                    case 2: cout << "Win" << endl; break;
                 }
             }
         }
