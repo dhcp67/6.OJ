@@ -16,8 +16,7 @@ struct Unionset {
         for (int i=0 ; i <= n; i++) fa[i] = i;
     }
     int get(int x) {
-        //if (x == fa[x]) return x;
-        if (x == fa[x]) return (fa[x] = (x == fa[x] ? x :get(fa[x])));
+        return (fa[x] = (x == fa[x] ? x :get(fa[x])));
     }
     void merge(int a, int b) {
         fa[get(a)] = get(b);
@@ -34,6 +33,7 @@ void read(int &n, int &m) {
 int main() {
     int n, m;
     read(n, m);
+    u.init(n);
     for (int i = 0; i < m; i++) {
         int a, b, c;
         cin >> a >> b >> c;
@@ -43,6 +43,5 @@ int main() {
             cout << ((u.get(b) == u.get(c)) ? "Yes" : "No") << endl;
         }
     }
-    
     return 0;
 }
