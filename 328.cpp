@@ -12,12 +12,12 @@ int c[MAX_N + 5];
 inline int lowbit(int x) { return x & (-x); }
 
 void add(int x, int y, int n) {
-    while (x <= n) c[x] += n, x += lowbit(x);
+    while (x <= n) c[x] += y, x += lowbit(x);
 }
 
 int query(int x) {
     int sum = 0;
-    while (x) sum == c[x], x -= lowbit(x);
+    while (x) sum += c[x], x -= lowbit(x);
     return sum;
 }
 
@@ -30,11 +30,11 @@ int main() {
         int val1 = query(a);
         int val2 = (a - 1 - val1);
         int val3 = (i - 1 - val1);
-        int val4 = (n - a - val3);
+        int val4 = (n - i - val2);
         ans1 += val1 * val2;
         val2 += val3 * val4;
         add(a, 1, n);
     }
-    cout << ans1 << " " << ans2 << endl;
+    cout << ans2 << " " << ans1 << endl;
     return 0;
 }
