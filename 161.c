@@ -1,17 +1,19 @@
 /*************************************************************************
-	> File Name: 226.a^b.c
+	> File Name: 161.c
 	> Author: lichun
 	> Mail: 318082789@qq.com
-	> Created Time: 2019年06月06日 星期四 13时24分01秒
+	> Created Time: 2019年06月15日 星期六 12时15分25秒
  ************************************************************************/
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    int a, b, p;
-    scanf("%d%d%d", &a, &b, &p);
-    printf("%lf\n", pow(a ,b));
-    printf("%d\n", (int)(pow(a, b)) % p);
+    int x, n;
+    scanf("%d%d", &x, &n);
+    double s = x;
+    for (int i = 0; i < n; i++) {
+        s *= 1.06;
+    }
+    printf("%lf\n", s);
     return 0;
 }

@@ -1,14 +1,14 @@
 /*************************************************************************
-	> File Name: tmp.c
-	> Author: lichun
+	> File Name: 179.c
+	> Author: LiChun
 	> Mail: 318082789@qq.com
-	> Created Time: 2019年06月06日 星期四 18时25分53秒
+	> Created Time: 2019年07月05日 星期五 20时55分50秒
  ************************************************************************/
 
 #include <stdio.h>
-#include <math.h>
+#define EPSILON 1.0E-6
 
 int main() {
-    printf("%lf\n", acos(-1));
+
     return 0;
 }

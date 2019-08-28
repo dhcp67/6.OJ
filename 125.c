@@ -6,14 +6,44 @@
  ************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     int h, m, s, t;
     int ht, mt, st, ss;
+    double percentage;
+    char time[10] = {0};
     scanf("%d%d%d%d", &h, &m, &s, &t);
     ss = h * 3600 + m * 60 + s + t;
-    st = t % 60;
-    mt = m / 60;
-    ht = mt / 60;
+    st = ss % 60;
+    ht = ss / 3600;
+    mt = ss % 3600 / 60;
+    if(ht <= 11) {
+        percentage = t / 86400.0;
+        strcpy(time, "am");
+    } else {
+        if (ht == 12) {
+            strcpy(time, "pm");
+            percentage = t / 86400.0;
+        } else if (ht > 12 && ht < 24) {
+            percentage = t / 86400.0;
+            ht -= 12;
+            strcpy(time, "pm");
+        }else {
+            percentage = t / 86400.0;
+            if (ht == 24) percentage = t /  86400.0;
+            ht -= 24;
+            if (ht >= 12) {
+                strcpy(time, "pm");
+                if (ht != 12) ht -= 12;
+            } else {
+                strcpy(time, "am");
+                if (ht == 0) {
+                    ht = 12;
+                }
+            }
+        }
+    }
+    printf("%d:%d:%d%s\n%.2lf\%\n", ht, mt, st, time, percentage * 100);
     return 0;
 }
