@@ -50,5 +50,6 @@ int main() {
         if (i) printf(" ");
         printf("%d", num[i]);
     }
+
     return 0;
 }
