@@ -8,11 +8,25 @@
 #include<iostream>
 using namespace std;
 
+const int MAX_N = 45;
+
+int arr[MAX_N + 5];
+
+int tuqiang(int n) {
+    if (arr[n]) return arr[n];
+    arr[i] = f()
+
+}
+
 int main() {
+    int n;
+    arr[2] = arr[1] = 1;
+    cin >> n;
+    cout << tuqiang(n) * 2 << endl;
     return 0;
 }
 
 /*第一块红。最后一块不是蓝色
- * f(b)=f(n-1)+f(n-2)
+ * f(n)=f(n-1)+f(n-2)
  * 2*f(n)
  */
