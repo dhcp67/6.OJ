@@ -7,14 +7,14 @@
 
 #include<iostream>
 using namespace std;
-
 const int MAX_N = 45;
 
 int arr[MAX_N + 5];
 
-int tuqiang(int n) {
+long long tuqiang(int n) {
     if (arr[n]) return arr[n];
-    arr[i] = f()
+    arr[n] = tuqiang(n - 1) + tuqiang(n - 2);
+    return arr[n];
 
 }
 

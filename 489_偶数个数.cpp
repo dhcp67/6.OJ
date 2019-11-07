@@ -8,19 +8,31 @@
 #include<iostream>
 using namespace std;
 
+const int MAX_N = 1000;
+int arr[MAX_N + 5];
+int arr2[MAX_N + 5];
+
+int f(int n, int m) {
+    if (m == 0) {
+        if (arr[n]) return arr[n] % 12345;
+        arr[n] = f(n - 1, 0) * 9 + f(n - 1, 1);
+        return arr[n] % 12345;
+    } else {
+        if (arr2[n]) return arr2[n] % 12345;
+        arr2[n] = f(n - 1, 0) + f(n - 1, 1) * 9;
+        return arr2[n] % 12345;
+    }
+
+}
+
 int main() {
     int m, n;
+    arr[1] = 1;
+    arr2[1] = 8;
+    arr[2] = 17;
+    arr2[2] = 73;
     cin >> n;
-    m = 0;
-    while(n--) m = m * 10 + 9;
-
+    cout << f(n, 1) << endl;
     return 0;
 }
 
-/*
- * f(i, 0/1)
- * f(i, 0) i位数有偶数个3
- * f(i，1) i位数有奇数个3
- * f(i, 1) = f(i - 1, 0) * 9 + f(i - 1, 1)
- * f(i, 1) = f(i - 1, 0) + f(i - 1, 1) * 9
- */

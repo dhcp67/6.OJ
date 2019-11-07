@@ -8,8 +8,26 @@
 #include<iostream>
 using namespace std;
 
-int main() {
+void f(int n, int m, int pre, int &ans) {
+    if (m * 2 + pre < n) {
+        return ;
+    }
+    if ( m * 2 == n || m * 2 + pre == n) {
+        if (pre != n) {
+            ans++;
+        }
+        return ;
+    }
+    for (int i = 1; i < n; i++) {
+        f(n, m - i, i, ans);
+    }
+}
 
+int main() {
+    int k, ans = 0;
+    cin >> k;
+    f(k, k, 0, ans);
+    cout << ans << endl;
     return 0;
 }
 

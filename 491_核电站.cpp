@@ -12,20 +12,22 @@ int ans;
 
 void f(int n, int m, int pos, int num) {
     if (pos == n) {
-        num < m ? ans += 2 : ans += 1;
+        if (num < m - 1)  ans += 1;
+        else if (num == m) ans--;
         return ;
     }
-    if (num == m - 1) {
-        f(n, m, pos + 1, 0);
+    if (num >= m) {
+        ans -= 1;
         return ;
     }
-    f(m, m, pos + 1, num++);
-    f(m, m, pos + 1, 0);
+    ans += 1;
+    f(n, m, pos + 1, ++num);
+    f(n, m, pos + 1, 0);
 }
 
 int main() {
     int n, m;
-    ans = 0;
+    ans = 1;
     cin >> n >> m;
     f(n, m, 1, 0); 
     cout << ans << endl;
